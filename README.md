@@ -44,3 +44,19 @@ Then, we continued calculating the accuracy for the validation data set and got 
 
 -	**Prediction of Test Dataset** <br>
 Finally, for predicting the test data, we first created an empty list to record the label prediction. We then transformed the list to one dimension. After printing the result into the list, we read the total prediction into the submission file to submit.
+
+### 6. Results and Reports
+We uploaded the prediction results of both the Keras and PyTorch models onto the Kaggle competition website and got the highest score of 0.97382 with an account name of “Mina Yen.”
+
+### 7. Learning
+-	**Keras** <br>
+From this project, we learned how to improve accuracy in the Keras model, learned not only from using what we learned from class but also outside sources together in the model, and got to experience a real world case for machine learning.
+
+-	**PyTorch** <br>
+For normalizing the dataset, we tried to normalize the data with the normalize function from torchvision.transforms. However, the accuracy was worse than the method directly divided by 255. Therefore, we stayed with the original method to scale the values between 0 and 1 for both the training and testing sets.
+  
+    We noticed that decreasing the batch size could be related to higher accuracy while that would take longer time for running the model.
+    We increased the hidden_size and got higher accuracy
+    We tried to increase the number of layers with different combinations but the accuracy didn’t get better. Thus, we concluded that increasing the number of layers might not have an obvious impact on the accuracy in this case.
+
+
