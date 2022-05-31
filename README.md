@@ -34,7 +34,7 @@ We researched different ways in which we can improve the accuracy in our models.
 -	**Data Preparation** <br>
 We first split the data into training and validation datasets. Then, we scaled the values between 0 and 1 for both the training and testing sets and transformed the data into tensors. We set the batch size to 20 and the shuffled to False.
 
-We created the model with only one hidden layer with a hidden size of 500 and applied linear transformation to hidden = input A^T + b as well as output = hidden A^T + b. Finally, we applied the dimensional output Tensor within the range [0,1] and summed to 1.
+    We created the model with only one hidden layer with a hidden size of 500 and applied linear transformation to hidden = input A^T + b as well as output     = hidden A^T + b. Finally, we applied the dimensional output Tensor within the range [0,1] and summed to 1.
 
 -	**Train Model** <br>
 For training the model, we set the learning rate to 0.001 and implemented the Adam algorithm as the optimizer. We set the epochs to 50 and got the highest training accuracy of around 0.9968.
