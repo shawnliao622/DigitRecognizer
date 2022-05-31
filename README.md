@@ -57,5 +57,3 @@ From this project, we learned how to improve accuracy in the Keras model, learne
     - We noticed that decreasing the batch size could be related to higher accuracy while that would take longer time for running the model.
     - We increased the hidden_size and got higher accuracy
     - We tried to increase the number of layers with different combinations but the accuracy didn’t get better. Thus, we concluded that increasing the number of layers might not have an obvious impact on the accuracy in this case.
-
-
