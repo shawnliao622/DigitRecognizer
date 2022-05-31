@@ -34,26 +34,13 @@ We researched different ways in which we can improve the accuracy in our models.
 -	**Data Preparation** <br>
 We first split the data into training and validation datasets. Then, we scaled the values between 0 and 1 for both the training and testing sets and transformed the data into tensors. We set the batch size to 20 and the shuffled to False.
 
-```
-# Split data into training and validation part
-in_train, in_valid, out_train, out_valid = train_test_split(in_train, out_train, test_size=0.2)
+We created the model with only one hidden layer with a hidden size of 500 and applied linear transformation to hidden = input A^T + b as well as output = hidden A^T + b. Finally, we applied the dimensional output Tensor within the range [0,1] and summed to 1.
 
-# Normalize data
-in_train_tensor = torch.tensor(in_train) / 255.0
-out_train_tensor = torch.tensor(out_train)
-train_tensor = TensorDataset(in_train_tensor, out_train_tensor)
+-	**Train Model** <br>
+For training the model, we set the learning rate to 0.001 and implemented the Adam algorithm as the optimizer. We set the epochs to 50 and got the highest training accuracy of around 0.9968.
 
-in_valid_tensor = torch.tensor(in_valid) / 255.0
-out_valid_tensor = torch.tensor(out_valid)
-val_tensor = TensorDataset(in_valid_tensor, out_valid_tensor)
+-	**Evaluate Model Performance** <br>
+Then, we continued calculating the accuracy for the validation data set and got the accuracy to around 0.9754.
 
-test_tensor = torch.tensor(in_test) / 255.0
-
-# set batch size to 20
-batch = 20
-torch.manual_seed(20742)
-load_train = DataLoader(train_tensor, batch_size=batch, shuffle=False)
-torch.manual_seed(20742)
-load_valid = DataLoader(val_tensor, batch_size=batch, shuffle=False)
-load_test = DataLoader(test_tensor, batch_size=batch, shuffle=False)
-```
+-	**Prediction of Test Dataset** <br>
+Finally, for predicting the test data, we first created an empty list to record the label prediction. We then transformed the list to one dimension. After printing the result into the list, we read the total prediction into the submission file to submit.
